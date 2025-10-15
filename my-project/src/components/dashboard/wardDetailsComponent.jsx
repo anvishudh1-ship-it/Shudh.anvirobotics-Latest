@@ -1,9 +1,8 @@
 import React from 'react';
 
-export  const Reports = ()=> {
+export const wardDetailsComponent=()=> {
   return (
     <div>
-        <h1>Reports</h1>
       
     </div>
   );
