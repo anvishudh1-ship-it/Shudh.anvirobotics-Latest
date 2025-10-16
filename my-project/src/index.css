@@ -1,1 +1,21 @@
 @import "tailwindcss";
+#root{
+  width: 100%;
+}
+
+
+
+body {
+  max-width: 2400px;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100dvh;
+  margin: auto;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
