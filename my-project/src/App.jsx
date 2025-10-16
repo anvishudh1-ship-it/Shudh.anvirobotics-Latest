@@ -4,14 +4,14 @@ import { Dashboard } from "./pages/Dashboard";
 import { Robots } from "./pages/Robots";
 import { Reports } from "./pages/Reports";
 import { Highlights } from "./pages/Highlights";
+import { Header } from "./components/Header";
 
 function App() {
   return (
     <Router>
-
-
+      <Header/>
       {/* Routes */}
-      <main className="bg-[#fff] max-w-[1400px] m-auto min-h-screen pt-[100px] font-[inter] place-items-center">
+      <main className="bg-[#fff] w-full max-w-[2400px] m-auto min-h-screen  font-[inter] place-items-center">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/robots" element={<Robots />} />
