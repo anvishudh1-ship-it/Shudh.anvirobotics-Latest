@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const robotReportsComponent =()=> {
+export const RobotReportsComponent =()=> {
   return (
     <div>
       

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const zoneWiseRobotReports=()=> {
+export const ZoneWiseRobotReports=()=> {
   return (
     <div>
       
