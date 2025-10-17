@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const zoneWiseManholeReports=()=> {
+export const ZoneWiseManholeReports=()=> {
   return (
     <div>
       

@@ -24,7 +24,7 @@ export const ServerDataProvider = ({ children }) => {
         setServerData(data || []);
         setMessage("Server data loaded");
       } catch (error) {
-        console.warn("⚠ Server fetch failed:", error.message);
+        console.error("⚠ Server fetch failed:", error.message);
         setMessage("⚠ Failed to load server data");
       } finally {
         setLoading(false);

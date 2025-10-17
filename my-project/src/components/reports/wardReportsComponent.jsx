@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const wardReportsComponent=()=> {
+export const WardReportsComponent=()=> {
   return (
     <div>
       

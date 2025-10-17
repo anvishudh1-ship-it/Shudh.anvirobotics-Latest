@@ -238,7 +238,7 @@ export const Robots = () => {
             <select
               value={userInputs.section}
               onChange={(e) => handleInput("section", e.target.value)}
-              className="border border-gray-300 rounded-md p-2 w-48 min-w-[12rem] text-xs"
+              className="border border-gray-300 rounded-md p-2 w-48 min-w-[12rem] text-sm"
             >
               <option value="">Select Section</option>
               {sections.map((sec) => (
@@ -255,7 +255,7 @@ export const Robots = () => {
             <DatePicker
               selected={userInputs.fromDate}
               onChange={(date) => handleInput("fromDate", date)}
-              className="border border-gray-300 rounded-md p-2 w-48 text-xs"
+              className="border border-gray-300 rounded-md p-2 w-48 text-sm"
               placeholderText="Pick a date"
               maxDate={new Date()}
             />
@@ -268,7 +268,7 @@ export const Robots = () => {
             <DatePicker
               selected={userInputs.toDate}
               onChange={(date) => handleInput("toDate", date)}
-              className="border border-gray-300 rounded-md p-2 w-48 text-xs"
+              className="border border-gray-300 rounded-md p-2 w-48 text-sm"
               placeholderText="Pick a date"
               maxDate={new Date()}
             />
@@ -394,9 +394,12 @@ export const Robots = () => {
             </p>
           )
         ) : (
-          <p className="text-gray-400 text-center mt-6">
-            Select filters and click “View Bots” to see results.
+          <div className="flex flex-col justify-center items-center mt-[50px]">
+            <img className="h-[130px] w-[130px]" src="/images/Robot-filter.png"/>
+          <p className="text-gray-400 text-center ">
+            “No robots to display yet. Please select a Division and Section to get started.”
           </p>
+          </div>
         )}
 
         {showPopup && activeRobot && (
