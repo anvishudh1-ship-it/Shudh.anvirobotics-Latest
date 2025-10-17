@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RobotReportsComponent } from "../components/reports/robotReportsComponent";
-import { ManholeReportsComponent } from "../components/reports/manholeReportsComponent";
+import { ManholeReportsComponent } from "../components/reports/ManholeReportsComponent";
 import { WardReportsComponent } from "../components/reports/wardReportsComponent";
 
 export const Reports = () => {
