@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { RobotReportsComponent } from "../components/reports/robotReportsComponent";
+import { RobotReportsComponent } from "../components/reports/RobotReportsComponent";
+import { WardReportsComponent } from "../components/reports/WardReportsComponent";
 import { ManholeReportsComponent } from "../components/reports/ManholeReportsComponent";
-import { WardReportsComponent } from "../components/reports/wardReportsComponent";
 
 export const Reports = () => {
     // --- STATE FOR LOCATION SELECTION ---
