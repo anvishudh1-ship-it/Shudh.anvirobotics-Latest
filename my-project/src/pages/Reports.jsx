@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RobotReportsComponent } from "../components/reports/RobotReportsComponent";
 import { WardReportsComponent } from "../components/reports/WardReportsComponent";
 import { ManholeReportsComponent } from "../components/reports/ManholeReportsComponent";
+import IconsData from "../data/iconsdata";
 
 export const Reports = () => {
     // --- STATE FOR LOCATION SELECTION ---
@@ -159,7 +160,7 @@ export const Reports = () => {
                         </div>
                         <span className="absolute bottom-[-16px]">{errors.section && <p className="text-red-500 text-xs mt-1">{errors.section}</p>}</span>
                     </div>
-                    <button onClick={handleViewReports} className="h-10 px-8 font-semibold text-white bg-[#1A8BA8] rounded-md hover:bg-[#15728a] transition-colors">View Reports</button>
+                    <button onClick={handleViewReports} className=" px-[20px] py-[10px] text-white flex items-center gap-[2px]  bg-[#1E9AB0] rounded-[12px] hover:rounded-[0px] transition-colors"><span className="inline-block">{IconsData.search}</span>View Reports</button>
                 </div>
 
                 {!viewClicked ? (
