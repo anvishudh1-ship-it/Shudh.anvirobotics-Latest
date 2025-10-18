@@ -318,4 +318,3 @@ id,manhole_id,operation_id,device_id,City,Division,Section,location,before_path,
 317,MH-0050,sb_007,sb_007,Hyderabad,Kukatpally(9),Hasmathpet,"{""latitude"": ""17.474644"", ""longitude"": ""78.485825""}",/images/before.png,/images/after.png,2025-07-21 13:38:40.540667+00:00,25,alert,"{""CO"": 2.68, ""CH4"": 47.63, ""H2S"": 8.39}",5,medium
 318,MH-0050,sb_008,sb_008,Hyderabad,Kukatpally(9),Hasmathpet,"{""latitude"": ""17.474644"", ""longitude"": ""78.485825""}",/images/before.png,/images/after.png,2025-07-21 13:08:40.540667+00:00,26,safe,"{""CO"": 0.86, ""CH4"": 87.09, ""H2S"": 13.12}",7,low
 319,MH-0050,sb_008,sb_008,Hyderabad,Kukatpally(9),Hasmathpet,"{""latitude"": ""17.474644"", ""longitude"": ""78.485825""}",/images/before.png,/images/after.png,2025-07-21 12:38:40.540667+00:00,26,safe,"{""CO"": 0.98, ""CH4"": 63.8, ""H2S"": 14.96}",8,low
-,,,,,Kukatpally(9),,,,,,,,,,
