@@ -50,7 +50,7 @@ const ManholePopUp = ({
   const popupHeaderColor = getStatusColorFromStatus(selectedLocation.status);
 
   return (
-    <div className="manhole-popup-box bg-grey-50 rounded-xl border-1 border-t-0 border-[#333] w-full ">
+    <div className="manhole-popup-box bg-grey-50 rounded-xl   border-t-0 border-[#333] w-full ">
       {/* Header */}
       <div className="w-full flex justify-between rounded-xl align-middle place-items-center gap-2 p-4 border-y-1  sticky top-0">
         <h4 className="font-[600] text-black">Manhole Details</h4>
