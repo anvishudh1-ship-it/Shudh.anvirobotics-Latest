@@ -131,7 +131,7 @@ export const WardReportPopup = ({ reportData, onClose }) => {
   const handlePrint = () => window.print();
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-900 p-4">
       <style>
         {`
         @media print {
