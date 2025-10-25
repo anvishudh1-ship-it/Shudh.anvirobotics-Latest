@@ -163,6 +163,29 @@ export const WardReportPopup = ({ reportData, onClose }) => {
           <InfoCard label="Date Range" value={data["Date Range"]} />
         </div>
 
+        <div className="flex flex-col gap-[20px] justify-evenly mb-[10px]">
+          <div className="flex ">
+          <div className="p-[10px] bg-white rounded-2xl border border-gray-200 shadow-md ">
+            <img className="h-[300px] aspect-[16/14]" src="/images/Landuse.jpg" />
+            <h3 className="text-center text-lg font-bold">Landuse</h3>
+          </div>
+          <div className="p-[10px] bg-white rounded-2xl border border-gray-200 shadow-md ">
+            <img className="h-[300px] aspect-[16/14]" src="/images/Surface.jpg" alt="" />
+            <h3 className="text-center text-lg font-bold">Surface</h3>
+          </div>
+          </div>
+
+<div className="flex">
+          <div className="p-[10px] bg-white rounded-2xl border border-gray-200 shadow-md ">
+            <img className="h-[300px] aspect-[16/14]" src="/images/Hotspot.jpg" alt="" />
+            <h3 className="text-center text-lg font-bold">Hotspot</h3>
+          </div>
+          <div className="p-[10px] bg-white rounded-2xl border border-gray-200 shadow-md ">
+            <img className="h-[300px] aspect-[16/14]" src="/images/SewageNetwork.png" alt="" />
+            <h3 className="text-center text-lg font-bold">SewageNetwork</h3>
+          </div>
+          </div>
+        </div>
         {/* Charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
           <ChartCard title="Manhole Condition Distribution" chartId="manholeConditionChart" chartRef={(el) => (chartRefs.current.manholeConditionChart = el)} />
