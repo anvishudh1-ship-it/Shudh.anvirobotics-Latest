@@ -16,6 +16,7 @@ import {
   ClockIcon,
   Download,
 } from "lucide-react";
+import { backendApi } from "../../utils/backendApi";
 
 export const RobotPopupComponent = ({ activeRecord, closePopup }) => {
   const [detailedFromDate, setDetailedFromDate] = useState(null);
@@ -85,7 +86,7 @@ export const RobotPopupComponent = ({ activeRecord, closePopup }) => {
   const handleGenerateReport = async () => {
     try {
 
-      const response = await fetch("http://192.168.1.43:5000/api/analyze", {
+      const response = await fetch(backendApi.analyze, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -294,7 +295,7 @@ export const RobotPopupComponent = ({ activeRecord, closePopup }) => {
                   <h1 className="mt-2">Before</h1>
                   <h1 className="mt-2">After</h1>
                 </div>
-                <div className="grid grid-cols-2 gap-2  mb-2 h-[153px]">
+                <div className="grid grid-cols-2 gap-2  mb-2 h-[165px]">
                   <div className="flex flex-col  gap-2">
                     {currentRecord?.images?.some((op) => op.before)
                       ? currentRecord.images.map((op, i) => op.before && <img key={`before-${i}`} src={op.before} alt={`Before ${i}`} className="h-full object-cover rounded-lg border border-gray-100" />)
@@ -399,7 +400,7 @@ export const RobotPopupComponent = ({ activeRecord, closePopup }) => {
                             </span>
                           </div>
                           <button
-                            className={`btn-view-more flex items-center rounded-[6px] cursor-pointer h-8 px-2 transition-colors ${isActive ? "bg-blue-700 text-white" : "bg-blue-500 text-white"}`}
+                            className={`btn-view-more flex items-center rounded-[6px] cursor-pointer h-8 px-2 transition-colors bg-blue-500 text-white`}
                             onClick={() => setSelectedHistory(history)}
                           >
                             View More

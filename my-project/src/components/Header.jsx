@@ -7,8 +7,8 @@ export const Header = () => {
   const currentPageStyle = (pname) => (pname === path ? "active" : "");
 
   return (
-    <header className="max-h-[200px] max-w-full flex flex-col mx-auto bg-white border-b-2 border-[#1D97AA] shadow-md shadow-[#1F252E1A]">
-      <div className="h-[100px] max-w-full px-[60px] flex justify-between items-center ">
+    <header className="max-h-[200px] max-w-full flex flex-col mx-auto bg-white border-b-2 border-[#1D97AA] shadow-md shadow-[#1F252E1A]  sticky top-0 z-50">
+      <div className="h-[80px] max-w-full px-[60px] flex justify-between items-center mt-[25px]">
         <div className="flex items-center">
           <img
             src="/anvi-robotics-logo.png"
