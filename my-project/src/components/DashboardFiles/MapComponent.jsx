@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import * as XLSX from "xlsx";
-import { LocateFixed , Map } from 'lucide-react';
+import { LocateFixed , Map,MapPin } from 'lucide-react';
 
 import MapboxCore from "./MapboxCore";
 import ManholePopUp from "./ManholePopUp";
@@ -520,11 +520,11 @@ const handleReset = () => {
  
       {/* --- Right section (Unchanged) --- */}
       <div
-        className="db-popup-container  h-full max-w-full   overflow-y-auto overflow-x-hidden bg-white rounded-xl shadow-lg"
-        style={{ height: "640px" }} 
+        className="db-popup-container ml-5 border  shadow-gray-400 shadow-md  border-gray-300    h-full max-w-full   overflow-y-auto overflow-x-hidden bg-white rounded-xl "
+        style={{ height: "633px" , minWidth: "448px" }} 
       >
         {selectedManholeLocation ? (
-          <div className="dB-Popup w-[380px] flex justify-start h-full place-items-start transition-all duration-300">
+          <div className="dB-Popup w-[448px] flex justify-start h-full place-items-start transition-all duration-300">
               <ManholePopUp
                 selectedLocation={selectedManholeLocation}
                 onClose={handleClosePopup}
@@ -533,7 +533,7 @@ const handleReset = () => {
               />
           </div>
         ) : selectedWardForPopup ? (
-          <div className="dB-Popup w-[400px] flex justify-start h-full place-items-start transition-all duration-300">
+          <div className="dB-Popup w-[448px] flex justify-start h-full place-items-start transition-all duration-300">
               <WardDetailsPopUp
                 wardData={selectedWardForPopup}
                 onClose={() => setSelectedAreaName("All")}
@@ -542,11 +542,12 @@ const handleReset = () => {
               />
           </div>
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400 p-4 text-center">
-              <p>
-              Select a Division, then a Ward, to see details.
-              <br/><br/>
-              Click a manhole dot to inspect it.
+          <div className="w-full h-full flex items-center justify-center place-items-center text-gray-400 p-4 text-center">
+           
+              <p className="place-items-center">
+                  <MapPin className=" w-15 h-15 mb-4 "/> 
+              Select a  Manhole on the map to view details.
+             
               </p>
           </div>
         )}
