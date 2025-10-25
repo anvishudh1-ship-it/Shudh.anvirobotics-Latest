@@ -473,7 +473,7 @@ export const ManholeReportPopup = ({ reportData, onClose }) => {
   const isAggregate = reportData.analysis_type === "manhole_aggregate";
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-900 p-4">
       <div className="bg-white w-full max-w-6xl rounded-lg shadow-xl relative flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center bg-gray-800 text-white px-6 py-4 rounded-t-lg">
