@@ -59,3 +59,7 @@ button:not(.popup-btn):not(.manhole-popup-btn):not(.btn-view-more) {
   background-color: transparent;
   color: #000;
 }
+
+.db-popup-container::-webkit-scrollbar{
+  width: 0px;
+}
