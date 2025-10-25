@@ -29,12 +29,12 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
   const finalSNo = sNo || SNo || wardDetails.s_no || "N/A";
 
   // 2. Define styles for active/inactive tabs
-  const activeClasses =
-    "bg-btn-blue  text-gray-900 text-gray-900> bold rounded-t-lg hover:text-gray-800";
+  const activeClasses = 
+    "bg-[#1E9AB033] text-gray-900 text-gray-900  bold  hover:text-gray-800"
   const inactiveClasses = "text-gray-600 hover:text-gray-800";
 
   return (
-    <div className="flex w-full h-max overflow-x-hidden relative flex-col p-2 rounded-xl border-1 border-gray-400 shadow-xl shadow-gray-300">
+    <div className="flex w-full h-max overflow-x-hidden relative flex-col p-2 rounded-xl   border-gray-400   shadow-gray-300">
       <div
         className="w-full flex justify-between items-center sticky -top-2 p-4 rounded-t-xl"
         style={{
@@ -44,7 +44,7 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
       >
         <div className="flex flex-col justify-center relative align-middle gap-2 text-white text-left">
           <h1 className="text-xl font-bold ">{`Ward: ${Area_name}`}</h1>
-          <p className="text-[12px]">{`Zone :${zone}`}</p>
+          <p className="text-[12px]">{`Ward :${zone}`}</p>
           <button
             type="button"
             className="btn-hover cursor-pointer"
@@ -71,10 +71,10 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
 
       <div className="ward-table-box mt-4 px-2 justify-between">
         {/* 3. Add onClick handlers and conditional styling */}
-        <div class="flex border-b border-gray-200 justify-start items-center gap-4">
+        <div className="grid grid-cols-2 place-content-center  border-gray-200 justify-start items-center gap-4 border">
           <button
             onClick={() => setActiveTab("details")}
-            className={`py-2 px-5 cursor-pointer  ml-10 ${
+            className={`py-2 px-4 cursor-pointer  ${
               activeTab === "details" ? activeClasses : inactiveClasses
             }`}
           >
@@ -82,7 +82,7 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
           </button>
           <button
             onClick={() => setActiveTab("alerts")}
-            className={`py-2 px-5 flex items-right gap-2 cursor-pointer ml-15  ${
+            className={`py-2 px-4 flex items-right gap-2 cursor-pointer  place-content-center-safe ${
               activeTab === "alerts" ? activeClasses : inactiveClasses
             }`}
           >
@@ -96,6 +96,7 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
         <div>
           {activeTab === "details" && (
             // This is your original Details table
+            <>
             <table className="details-table mt-2 w-full bg-white shadow-md text-[12px] font-[400] border-1 border-gray-400 shadow-gray-400 rounded-b-md overflow-hidden text-left">
               <thead>
                 <tr className="bg-gray-200 border border-gray-400">
@@ -172,25 +173,31 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
                     {landuse_classes}
                   </td>
                 </tr>
+  
               </tbody>
             </table>
+             <div className="demographics-box mt-4 text-left text-md px-2 py-3">
+          <h3 className="section-title font-bold">Demographics</h3>
+          <div className="demographics-card mt-2 rounded-lg p-4 py-3 shadow-md bg-gray-100 flex justify-between align-middle gap-2">
+            <div className="area-label text-sm">Area:</div>
+            <div className="area-value text-sm font-semibold">{area} sq.m</div>
+          </div>
+        </div>
+            </>
+            
           )}
-
-          {activeTab === "alerts" && (
+           {activeTab === "alerts" && (
             // This is where your Alerts component goes
            <Alerts/>
           )}
+           
+
         </div>
       </div>
+                       
 
       {/* Demographics Box (Stays the same) */}
-      <div className="demographics-box mt-4 text-left text-md px-2 py-3">
-        <h3 className="section-title font-bold">Demographics</h3>
-        <div className="demographics-card mt-2 rounded-lg p-4 py-3 shadow-md bg-gray-100 flex justify-between align-middle gap-2">
-          <div className="area-label text-sm">Area:</div>
-          <div className="area-value text-sm font-semibold">{area} sq.m</div>
-        </div>
-      </div>
+  
     </div>
   );
 };
