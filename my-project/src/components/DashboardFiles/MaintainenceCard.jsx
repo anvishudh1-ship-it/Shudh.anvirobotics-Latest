@@ -6,9 +6,11 @@ const MaintainenceCard = (props) => {
 
   return (
     <li
-      className="maintainence-card aspect-auto rounded-lg overflow-hidden bg-gray-50 shadow-sm self-start shadow-gray-200 hover:shadow-lg hover:shadow-blue-200 hover:scale-102 transition-all duration-200"
+      className="maintainence-card aspect-auto w-full max-w-[300px]  rounded-lg overflow-hidden bg-gray-50 shadow-sm self-start shadow-gray-200 hover:shadow-lg hover:shadow-blue-200 hover:scale-102 transition-all duration-200"
     >
-      <img src={each.imageUrl ? each.imageUrl : 'images/gas testing.png'} className="w-full  aspect-square S object-center" alt={each.title + each.id} />
+      <div className="w-full h-full overflow-hidden object-cover aspect-square place-content-center">
+        <img src={each.imageUrl ? each.imageUrl : 'images/gas testing.png'} className="w-full h-full object-center object-cover" alt={each.title + each.id} />
+      </div>
       <div className="p-3 flex flex-col justify-start align-middle gap-3">
         <span className="w-full text-left flex items-center justify-between align-middle gap-1">
           <h5 className="font-[500] text-md">{each.title}</h5>

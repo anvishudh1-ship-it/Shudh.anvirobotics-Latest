@@ -119,7 +119,7 @@ const styles = {
     padding: '16px',
     fontFamily: '"Inter", Arial, sans-serif', // Using a common system font
     color: '#333',
-    maxWidth: '400px',
+    maxWidth: '500px',
      // Light gray background for the section
   },
   heading: {

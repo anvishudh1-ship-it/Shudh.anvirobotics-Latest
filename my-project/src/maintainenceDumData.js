@@ -83,18 +83,7 @@ const maintenanceTasks = [
     imageUrl: "/images/Gas Retesting.png", // related to pipeline inspection/testing
     category: "pending",
   },
-  {
-    id: 8,
-    title: "Gas Testing",
-    location: "Unknown",
-    dateTime: "TBD",
-    priority: "Low",
-    priorityColor: "green",
-    status: "Scheduled",
-    statusTagColor: "blue",
-    imageUrl: "/images/gas testing.png", // exact match available
-    category: "upcoming",
-  }
+ 
 ];
 
 export default maintenanceTasks;
