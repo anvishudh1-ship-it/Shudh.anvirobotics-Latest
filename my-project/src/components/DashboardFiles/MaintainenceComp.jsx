@@ -63,7 +63,7 @@ const MaintainenceComp = () => {
         <h4 className="text-left text-lg mb-5 w-auto self-start border-b-2 border-blue-400">
           {filterBtnsList.find((e) => e.value === activeTab).label}
         </h4>
-        <ul className="p-0 m-0 w-full grid grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
+        <ul className="p-0 m-0 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[20px] place-items-center">
           {maintainenceD.map((each) => (
             <MaintainenceCard key={each.id} MaintainenceInfo={each} />
           ))}

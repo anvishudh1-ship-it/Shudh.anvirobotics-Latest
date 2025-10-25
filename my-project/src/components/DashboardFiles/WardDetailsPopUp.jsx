@@ -34,7 +34,7 @@ const WardDetailsPopUp = ({ selectedWard, setSelectedWard, wardData }) => {
   const inactiveClasses = "text-gray-600 hover:text-gray-800";
 
   return (
-    <div className="flex w-full h-max overflow-x-hidden relative flex-col p-2 rounded-xl   border-gray-400   shadow-gray-300">
+    <div className="flex w-full h-max  relative flex-col p-2 rounded-xl   border-gray-400   shadow-gray-300">
       <div
         className="w-full flex justify-between items-center sticky -top-2 p-4 rounded-t-xl"
         style={{

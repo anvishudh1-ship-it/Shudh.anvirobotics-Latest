@@ -12,7 +12,8 @@ import WardDetailsPopUp from "./WardDetailsPopUp";
 
 const mapStyles = [
   { url: "mapbox://styles/shubhamgv/cmggj327600ke01pd15kqh8v6", img: "/images/Satilight.png" },
-  { url: "mapbox://styles/shubhamgv/cmdr5g1b2000c01sd8h0y6awy", img: "/images/street.png" }
+  { url: "mapbox://styles/shubhamgv/cmdr5g1b2000c01sd8h0y6awy", img: "/images/street.png" },
+  { url: "mapbox://styles/shubhamgv/cmh5vh70d001q01qvhqhwh5b9", img: "/images/diameter.png" },
 ];
 
 const emptyGeoJSON = { type: "FeatureCollection", features: [] };
@@ -384,7 +385,7 @@ const handleReset = () => {
     <div className=" w-full flex flex-row max-w-[2400px] gap-1">
       
       {/* --- Left section --- */}
-      <div className="shadow-md shadow-gray-500 p-6 mb-4 rounded-xl bg-white w-full md:w-[70%]">
+      <div className="shadow-md shadow-gray-500 p-6 mb-4 rounded-xl bg-white w-full max-w-[70%]">
         
         {/* Top Controls */}
         <div className="flex justify-between align-middle flex-wrap gap-2">
@@ -504,7 +505,7 @@ const handleReset = () => {
             {isLoading && <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10">Loading map...</div>}
             {error && <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10 text-red-500">Error: {error}</div>}
             
-            <div className="bg-[#ffffff] absolute left-2 bottom-2 z-[900] rounded-xl p-4 py-5 text-[12px] text-black flex flex-col gap-1">
+            <div className="bg-[#ffffff] absolute left-2 bottom-2 z-[500] rounded-xl p-4 py-5 text-[12px] text-black flex flex-col gap-1">
               <span className="flex items-center gap-3 space-x-1">
                   <span className="w-3 h-3 rounded-full bg-green-500"></span>Safe - Regular Maintenance
               </span>
@@ -520,11 +521,11 @@ const handleReset = () => {
  
       {/* --- Right section (Unchanged) --- */}
       <div
-        className="db-popup-container ml-5 border  shadow-gray-400 shadow-md  border-gray-300    h-full max-w-full   overflow-y-auto overflow-x-hidden bg-white rounded-xl "
-        style={{ height: "633px" , minWidth: "448px" }} 
+        className="db-popup-container ml-5 border h-[633px]  shadow-gray-400 shadow-md  border-gray-300   w-full max-w-[30%]  overflow-y-auto overflow-x-hidden bg-white rounded-xl "
+      
       >
         {selectedManholeLocation ? (
-          <div className="dB-Popup w-[448px] flex justify-start h-full place-items-start transition-all duration-300">
+          <div className="dB-Popup max-w-full flex justify-start h-full place-items-start transition-all duration-300">
               <ManholePopUp
                 selectedLocation={selectedManholeLocation}
                 onClose={handleClosePopup}
@@ -533,7 +534,7 @@ const handleReset = () => {
               />
           </div>
         ) : selectedWardForPopup ? (
-          <div className="dB-Popup w-[448px] flex justify-start h-full place-items-start transition-all duration-300">
+          <div className="dB-Popup max-w-full flex justify-start h-full place-items-start transition-all duration-300">
               <WardDetailsPopUp
                 wardData={selectedWardForPopup}
                 onClose={() => setSelectedAreaName("All")}
