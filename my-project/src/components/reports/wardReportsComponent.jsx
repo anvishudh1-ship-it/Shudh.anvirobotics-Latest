@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { WardReportPopup } from './WardReportPopup';
+import { backendApi } from '../../utils/backendApi';
 // import { WardReportPopup } from "./WardReportPopup"; 
 
 export const WardReportsComponent = ({ city, division, section }) => {
@@ -26,7 +27,7 @@ export const WardReportsComponent = ({ city, division, section }) => {
         console.log("Sending corrected payload to backend:", payload);
 
         try {
-            const response = await fetch("http://10.188.1.28:5001/api/analyze/ward", {
+            const response = await fetch(backendApi.wardsReportUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
@@ -63,7 +64,7 @@ export const WardReportsComponent = ({ city, division, section }) => {
             />
         )}
 
-            <div className="mt-4 mx-[20px]">
+            <div className="mt-4">
                 <div className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between shadow-sm">
                     <div className="flex items-center gap-x-4">
                         <div className="bg-blue-100 p-3 rounded-lg">
@@ -86,7 +87,7 @@ export const WardReportsComponent = ({ city, division, section }) => {
                         }`}
                         title={!section ? "Please select a Section from the dropdown above" : "Generate Ward Report"}
                     >
-                        {isLoading ? "Generating..." : "Open Report"}
+                        {isLoading ? "Loading..." : "Open Report"}
                     </button>
                 </div>
             </div>

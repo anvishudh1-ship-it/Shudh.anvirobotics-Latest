@@ -4,8 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Bot, Calendar, MapPin, Search, FireExtinguisher } from "lucide-react";
 import Papa from "papaparse";
 import { useServerData } from "../context/ServerDataContext";
-import { RobotPopupComponent } from "../components/robots/robotPopupComponent";
-
+import { RobotPopupComponent } from "../components/robots/RobotPopupComponent";
 const userInputsObj = {
   division: "",
   section: "",
@@ -200,22 +199,22 @@ export const Robots = () => {
 
   return (
     <div className="w-full ">
-      <section className="section1 border-b-[1.5px] border-[#E1E7EF] py-[10px] px-[30px] ">
+      <section className="section1 border-b-[1.5px] border-[#E1E7EF] py-[10px] px-[30px] bg-white ">
       <h1 className="text-[24px] font-bold">Robots</h1>
       <p className="text-[14px] text-[#65758B]">Monitor and manage robot fleet</p>
       </section>
 
       {/* Filters */}
       <section className="flex justify-center h-auto w-full mt-6 ">
-        <div className="flex flex-wrap p-[22px] mx-[30px] rounded-xl border-[1.5px] border-[#E1E7EF]  justify-center items-center max-w-[2400px] w-[100%]">
+        <div className="flex flex-wrap justify-evenly gap-[1%] p-[22px] pb-[26px] mx-[30px] rounded-xl border-[1.5px] border-[#E1E7EF]  items-center max-w-[2400px] w-[100%] bg-white ">
           {/* Division */}
-          <div className="m-auto text-start relative">
+          <div className=" text-start relative">
             <label className="block font-semibold mb-1">Division</label>
             <div className="flex flex-col">
               <select
                 value={userInputs.division}
                 onChange={(e) => handleInput("division", e.target.value)}
-                className="border border-gray-300 rounded-md p-2 w-48 min-w-[12rem] text-sm"
+                className="border border-gray-300 rounded-md p-2 w-full min-w-[150px] text-sm relative "
               >
                 <option value="">Select Division</option>
                 {divisions.map((div) => (
@@ -224,21 +223,21 @@ export const Robots = () => {
                   </option>
                 ))}
               </select>
-              {inputError.division && (
+              <span className="absolute bottom-[-20px] ">{inputError.division && (
                 <span className="text-red-500 text-xs mt-1 ml-2">
                   *Division required
                 </span>
-              )}
+              )}</span>
             </div>
           </div>
 
           {/* Section */}
-          <div className="m-auto text-start">
+          <div className=" text-start">
             <label className="block font-semibold mb-1">Section</label>
             <select
               value={userInputs.section}
               onChange={(e) => handleInput("section", e.target.value)}
-              className="border border-gray-300 rounded-md p-2 w-48 min-w-[12rem] text-sm"
+              className="border border-gray-300 rounded-md p-2 w-full min-w-[150px] text-sm"
             >
               <option value="">Select Section</option>
               {sections.map((sec) => (
@@ -250,12 +249,12 @@ export const Robots = () => {
           </div>
 
           {/* From Date */}
-          <div className="m-auto text-start relative">
+          <div className=" text-start relative">
             <label className="block font-semibold mb-1">From Date</label>
             <DatePicker
               selected={userInputs.fromDate}
               onChange={(date) => handleInput("fromDate", date)}
-              className="border border-gray-300 rounded-md p-2 w-48 text-sm"
+              className="border border-gray-300 rounded-md p-2 w-full text-sm min-w-[150px]"
               placeholderText="Pick a date"
               maxDate={new Date()}
             />
@@ -263,12 +262,12 @@ export const Robots = () => {
           </div>
 
           {/* To Date */}
-          <div className="m-auto text-start relative">
+          <div className=" text-start relative">
             <label className="block font-semibold mb-1">To Date</label>
             <DatePicker
               selected={userInputs.toDate}
               onChange={(date) => handleInput("toDate", date)}
-              className="border border-gray-300 rounded-md p-2 w-48 text-sm"
+              className="border border-gray-300 rounded-md p-2 w-full text-sm min-w-[150px]"
               placeholderText="Pick a date"
               maxDate={new Date()}
             />
@@ -276,7 +275,7 @@ export const Robots = () => {
           </div>
 
           {/* Button */}
-          <div className="m-auto">
+          <div className="">
             <button
               className="bg-[#1A8BA8] text-white px-6 py-2 rounded-[16px] flex items-center gap-2 cursor-pointer mt-5.5 transition-all duration-150"
               onClick={handleViewBots}
@@ -289,7 +288,7 @@ export const Robots = () => {
       </section>
 
       {/* Data Display */}
-      <section className="max-w-[1400px] px-5">
+      <section className="w-full px-5">
         {loading ? (
           <p className="text-gray-800 text-center text-xl mt-4 animate-pulse">
             {message}
